@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="Меню ресторана"
+        android:text="DeliDash"
         android:textSize="24sp"
         android:padding="16dp"
         android:layout_width="wrap_content"

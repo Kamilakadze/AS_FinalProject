@@ -22,7 +22,16 @@ public class OrdersFragment extends Fragment {
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(24, 24, 24, 24);
 
+
         List<FoodItem> history = OrderManager.getOrderHistory();
+        if (history.isEmpty()) {
+            TextView tvEmpty = new TextView(getContext());
+            tvEmpty.setText("У вас пока нет заказов.");
+            tvEmpty.setPadding(0, 24, 0, 24);
+            tvEmpty.setGravity(Gravity.CENTER);
+            layout.addView(tvEmpty);
+        }
+
         for (FoodItem item : history) {
             TextView tv = new TextView(getContext());
             tv.setText(item.getName() + "\n" + item.getDescription() + "\n₸ " + item.getPrice());
